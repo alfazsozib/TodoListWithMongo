@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EJS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
+    <div class="box">
+            <% newListItems.forEach(function(element){%>
+                <form action="/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" name = "check"class="remove-btn btn btn-danger" value="<%=element._id%>" onChange="this.form.submit()">
+                    <p>
+                        <%= element.name %>
+                    </p>
+
+                </div>
+                
+                </form>
+                <% });%>
+
+                <form action="/" method="post">
+                    <input type="text" id="task" name="todo" placeholder="Add New Task" autocomplete="off">
+                    <button type="submit" class="add-btn">+</button>
+                </form>
+    </div>
+</body>
+</html>
