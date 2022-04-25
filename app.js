@@ -1,5 +1,4 @@
 // jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -13,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb+srv://alfaz_hosain:01756279911@cluster0.ginyg.mongodb.net/todoListDB")
+
 
 const peopleShema = new mongoose.Schema({
   name : String,
